@@ -1,6 +1,6 @@
 <template>
   <div>
-  <h1>Routes Management Pannel</h1>
+  <h2>Routes Management Pannel</h2>
   <div class="container">
           <table>
           <thead>
@@ -35,12 +35,12 @@
             <td><input name="tocity" type="text" id="tocityAdd" placeholder="To" required v-model="ARoute.tocity"></td>
             <td><input name="cost" type="number" id="costAdd" placeholder="Cost" required v-model="ARoute.cost"></td>
             <td><input name="time" type="text" id="timeAdd" placeholder="Departure time" required v-model="ARoute.departuretime"></td>
-            <td><input name="date" type="text" id="dateAdd"   required v-model="ARoute.departuredate"></td>
+            <td><input name="date" type="text" id="dateAdd" placeholder="Departure date"  required v-model="ARoute.departuredate"></td>
         </tr>
       </tbody>
     </table>
     </div>
-    <button class="add"  @click="addRoute(ARoute)"> Add  </button>
+    <button class="add"  @click="addRoute(ARoute)"> Add Route </button>
   </div>
 </template>
 

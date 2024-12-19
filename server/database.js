@@ -1,10 +1,10 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
-    user: "postgres",
-    password: "postgres", // Enter your password here
-    database: "testWad", //Try to use the same name for your database
-    host: "localhost",
-    port: "5432"
+    user: process.env.DB_USER || "postgres",
+    password: process.env.DB_PASSWORD || "postgres",
+    database: process.env.DB_NAME || "testwad",
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || 5432
 });
 
 const execute = async(createTblQuery, insertDataQuery) => {

@@ -56,9 +56,9 @@ app.put('/api/routes/:id', async(req, res) => {
         const route = req.body;
         console.log("An update request has arrived");
         const updateroute = await pool.query(
-            "UPDATE routes SET (id, fromcity, tocity, cost, departuretime, departuredate) = ($1, $2, $3, $4, $5, $6) WHERE id = $1 RETURNING*", [id, route.fromcity, route.tocity, route.cost, route.departuretime, route.departuredate]
+            "UPDATE routes SET (departuretime, departuredate) = ($1, $2) WHERE id = $3 RETURNING*", [route.departuretime, route.departuredate, id]
         );
-        res.json(updateroute);
+        res.json(updateroute.rows[0]);
     } catch (err) {
         console.error(err.message);
     }
